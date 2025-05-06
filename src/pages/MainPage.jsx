@@ -8,15 +8,11 @@ const MainPage = () => {
 
   return (
     <div className="main-page">
-     
-
       <div className="content">
         <aside className="sidebar">
-          
-          <button onClick={() => navigate('/utworz-umowy')}>Utwórz Umowy</button>
+          <button onClick={() => navigate('/utworz-umowy')}>Utwórz Umowę</button>
+          <button onClick={() => navigate('/lista-umow')}>Lista Umów</button>
         </aside>
-
-        
       </div>
     </div>
   );
