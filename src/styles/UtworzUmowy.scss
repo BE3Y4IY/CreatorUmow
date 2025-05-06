@@ -51,25 +51,37 @@
       resize: vertical;
     }
 
-    button {
+    .button-container {
+      display: flex;
+      justify-content: space-between;
       margin-top: 32px;
-      padding: 12px 24px;
-      background-color: #DC2626;
-      color: #FFFFFF;
-      border: none;
-      border-radius: 8px;
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background-color 0.2s ease, transform 0.1s ease;
 
-      &:hover {
-        background-color: #B91C1C;
-        transform: translateY(-1px);
+      button {
+        padding: 12px 24px;
+        background-color: #DC2626;
+        color: #FFFFFF;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.2s ease, transform 0.1s ease;
+
+        &:hover {
+          background-color: #B91C1C;
+          transform: translateY(-1px);
+        }
+
+        &:active {
+          transform: translateY(0);
+        }
       }
 
-      &:active {
-        transform: translateY(0);
+      .btn-back {
+        background-color: #6B7280; /* Серый для кнопки "Wróć" */
+        &:hover {
+          background-color: #4B5563;
+        }
       }
     }
 
@@ -86,6 +98,15 @@
 
     .form-step {
       padding: 24px;
+    }
+
+    .button-container {
+      flex-direction: column;
+      gap: 16px;
+
+      button {
+        width: 100%;
+      }
     }
   }
 }
