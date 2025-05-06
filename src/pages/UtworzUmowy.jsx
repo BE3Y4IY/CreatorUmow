@@ -86,6 +86,25 @@ const UtworzUmowy = () => {
     }
   };
 
+  // Автозаполнение адреса korespondencyjnego на следующих шагах
+  React.useEffect(() => {
+    if (step === 3 && formData.adresImie && formData.adresUlica && formData.adresNrDomu && 
+        formData.adresMiejscowosc && formData.adresKodPocztowy && formData.adresPowiat && 
+        formData.adresWojewodztwo) {
+      setFormData(prev => ({
+        ...prev,
+        miUlica: prev.miUlica || prev.adresUlica,
+        miNrDomu: prev.miNrDomu || prev.adresNrDomu,
+        miMiejscowosc: prev.miMiejscowosc || prev.adresMiejscowosc,
+        miKod: prev.miKod || prev.adresKodPocztowy,
+        miPowiat: prev.miPowiat || prev.adresPowiat,
+        miWojewodztwo: prev.miWojewodztwo || prev.adresWojewodztwo
+      }));
+    }
+  }, [step, formData.adresImie, formData.adresUlica, formData.adresNrDomu, 
+      formData.adresMiejscowosc, formData.adresKodPocztowy, formData.adresPowiat, 
+      formData.adresWojewodztwo]);
+
   return (
     <div className="utworz-umowy">
       {step === 1 && (
