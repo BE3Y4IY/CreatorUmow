@@ -1,54 +1,53 @@
 // src/styles/UtworzUmowy.scss
 .utworz-umowy {
-    padding: 30px;
-    font-family: Arial, sans-serif;
-  
-    .form-step {
-      max-width: 600px;
-      margin: 0 auto;
-      background: #eee;
-      padding: 20px;
-      border-radius: 10px;
-  
-      h2 {
-        margin-bottom: 20px;
-      }
-  
-      label {
-        display: block;
-        margin-top: 15px;
-        font-weight: bold;
-      }
-  
-      input,
-      select {
-        width: 100%;
-        padding: 8px;
-        margin-top: 5px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-      }
-  
-      button {
-        margin-top: 25px;
-        padding: 10px 20px;
-        background-color: #d40000;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-  
-        &:hover {
-          background-color: #aa0000;
-        }
-      }
-  
-      .sub-panel {
-        background-color: #ddd;
-        padding: 15px;
-        border-radius: 8px;
-        margin-top: 10px;
+  padding: 30px;
+  font-family: Arial, sans-serif;
+
+  .form-step {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #eee;
+    padding: 20px;
+    border-radius: 10px;
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      margin-top: 25px;
+      padding: 10px 20px;
+      background-color: #d40000;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #aa0000;
       }
     }
+
+    .sub-panel {
+      background-color: #ddd;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
   }
-  
+}

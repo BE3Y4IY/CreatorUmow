@@ -8,14 +8,7 @@ const MainPage = () => {
 
   return (
     <div className="main-page">
-      <header className="header">
-        <img src="/logo192.png" alt="Logo" className="logo" />
-        <div className="user-info">
-          <div>Handlowiec</div>
-          <div className="email">test@mail.com</div>
-        </div>
-        <button className="logout-button">Wyloguj</button>
-      </header>
+     
 
       <div className="content">
         <aside className="sidebar">
