@@ -1,53 +1,91 @@
-// src/styles/UtworzUmowy.scss
 .utworz-umowy {
-  padding: 30px;
-  font-family: Arial, sans-serif;
+  padding: 40px 20px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+  background-color: #FFFFFF;
+  min-height: 100vh;
 
   .form-step {
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
-    background: #eee;
-    padding: 20px;
-    border-radius: 10px;
+    background: #E5E7EB;
+    padding: 32px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 
     h2 {
-      margin-bottom: 20px;
+      color: #1F2937;
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 24px;
     }
 
     label {
       display: block;
-      margin-top: 15px;
-      font-weight: bold;
+      margin-top: 16px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #1F2937;
     }
 
     input,
-    select {
+    select,
+    textarea {
       width: 100%;
-      padding: 8px;
-      margin-top: 5px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
+      padding: 12px;
+      margin-top: 8px;
+      border: 1px solid #D1D5DB;
+      border-radius: 8px;
+      font-size: 16px;
+      background-color: #FFFFFF;
+      transition: border-color 0.2s ease;
+
+      &:focus {
+        outline: none;
+        border-color: #DC2626;
+        box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+      }
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
     }
 
     button {
-      margin-top: 25px;
-      padding: 10px 20px;
-      background-color: #d40000;
-      color: white;
+      margin-top: 32px;
+      padding: 12px 24px;
+      background-color: #DC2626;
+      color: #FFFFFF;
       border: none;
-      border-radius: 5px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
       cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.1s ease;
 
       &:hover {
-        background-color: #aa0000;
+        background-color: #B91C1C;
+        transform: translateY(-1px);
+      }
+
+      &:active {
+        transform: translateY(0);
       }
     }
 
     .sub-panel {
-      background-color: #ddd;
-      padding: 15px;
+      background-color: #F3F4F6;
+      padding: 20px;
       border-radius: 8px;
-      margin-top: 10px;
+      margin-top: 16px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 20px 10px;
+
+    .form-step {
+      padding: 24px;
     }
   }
 }
