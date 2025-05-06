@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import '../styles/UtworzUmowy.scss';
 
 const UtworzUmowy = () => {
@@ -20,7 +21,7 @@ const UtworzUmowy = () => {
     tel2: '',
     kontaktowyTel: '',
     email: '',
-    operatorOSD: '',
+    operatorOsd: '',
     czyWlascicielLicznika: '',
     adresImie: '',
     adresUlica: '',
@@ -49,7 +50,7 @@ const UtworzUmowy = () => {
     fazowa: '',
     taryfa: '',
     numerLicznika: '',
-    numerPPM: '',
+    numerPpm: '',
     cenaBrutto: '',
     pierwszaWplata: '',
     sposobPlatnosci1: '',
@@ -69,6 +70,21 @@ const UtworzUmowy = () => {
 
   const nextStep = () => setStep(prev => prev + 1);
   const prevStep = () => setStep(prev => prev - 1);
+
+  const handleSubmit = async () => {
+    console.log('Отправляемые данные:', formData);
+    try {
+      const response = await axios.post('http://localhost:5000/api/umowy', formData, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+      alert(`Dane zapisane! ID umowy: ${response.data.id}`);
+    } catch (error) {
+      console.error('Błąd podczas zapisywania danych:', error.response ? error.response.data : error.message);
+      alert('Błąd podczas zapisywania danych. Sprawdź konsolę.');
+    }
+  };
 
   return (
     <div className="utworz-umowy">
@@ -143,7 +159,7 @@ const UtworzUmowy = () => {
           <input type="email" name="email" value={formData.email} onChange={handleChange} />
 
           <label>Operator OSD:</label>
-          <select name="operatorOSD" value={formData.operatorOSD} onChange={handleChange}>
+          <select name="operatorOsd" value={formData.operatorOsd} onChange={handleChange}>
             <option value="">-- Wybierz --</option>
             <option value="PGE Dystrybucja">PGE Dystrybucja</option>
             <option value="Tauron Dystrybucja">Tauron Dystrybucja</option>
@@ -314,7 +330,7 @@ const UtworzUmowy = () => {
           <input type="text" name="numerLicznika" value={formData.numerLicznika} onChange={handleChange} />
 
           <label>Numer PPM lub PPE:</label>
-          <input type="text" name="numerPPM" value={formData.numerPPM} onChange={handleChange} />
+          <input type="text" name="numerPpm" value={formData.numerPpm} onChange={handleChange} />
 
           <div className="button-container">
             <button className="btn-back" onClick={prevStep}>Wróć</button>
@@ -398,7 +414,7 @@ const UtworzUmowy = () => {
 
           <div className="button-container">
             <button className="btn-back" onClick={prevStep}>Wróć</button>
-            <button onClick={() => alert("Wszystkie dane zapisane!")}>Zakończ</button>
+            <button onClick={handleSubmit}>Zakończ</button>
           </div>
         </div>
       )}
